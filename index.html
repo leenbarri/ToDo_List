@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="to do list app, best to do app, online to do app, to do app using js, create to do list">
+    <meta name="description" content="This is our to do list app, small project, challange">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imgs/icon.png" type="image/x-icon">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <img src="imgs/bg.jpg" alt="header background">
+        </header>
+        <section>
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>TODO</h2>
+                    <i class="fas fa-sun"></i>
+                </div>
+                <div class="section-input">
+                    <div class="check">
+                        <div class="mark"></div>
+                    </div>
+                    <div class="input">
+                        <div class="input-field">
+                            <form>
+                                <input type="text" placeholder="Create new to do">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-tasks">
+                    <div class="task">
+                        <div class="check">
+                            <div class="mark">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="task-content">
+                            <p>task1</p>
+                            <div class="close">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status-mob">
+                    <div class="status-counter">
+                        <span id="tasksRemaining">0</span>
+                        items left
+                    </div>
+                    <div class="clear-all">
+                        <a href="#" class="btn-clear-all">Clear Completed</a>
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="status-counter">
+                        <span id="counter">0</span>
+                        items left
+                    </div>
+                    <div class="status-category">
+                        <ul>
+                            <li><a href="#" class="active">All</a></li>
+                            <li><a href="#">Active</a></li>
+                            <li><a href="#">Completed</a></li>
+                        </ul>
+                    </div>
+                    <div class="clear-all">
+                        <a href="#" class="btn-clear-all">Clear Completed</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>Drag and Drop to reorder list</p>
+        </footer>
+    </div>
+</body>
+</html>
