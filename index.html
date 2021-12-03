@@ -5,83 +5,81 @@
     <meta name="keywords" content="to do list app, best to do app, online to do app, to do app using js, create to do list">
     <meta name="description" content="This is our to do list app, small project, challange">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- My Styling File -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Icon -->
     <link rel="icon" href="imgs/icon.png" type="image/x-icon">
     <title>To Do List</title>
 </head>
 <body>
     <div id="container">
         <header>
-            <img src="imgs/bg.jpg" alt="header background">
-        </header>
-        <section>
-            <div class="section-container">
-                <div class="section-header">
-                    <h2>TODO</h2>
+        </header> <!-- ./header -->
+        <main>
+            <div id="main-container">
+                <div class="title">
+                    <h2>todo</h2>
                     <i class="fas fa-sun"></i>
-                </div>
-                <div class="section-input">
-                    <div class="check">
-                        <div class="mark"></div>
-                    </div>
-                    <div class="input">
-                        <div class="input-field">
-                            <form>
-                                <input type="text" placeholder="Create new to do">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-tasks">
-                    <div class="task">
-                        <div class="check">
-                            <div class="mark">
+                </div> <!-- ./title -->
+                <div class="input flex-row">
+                    <div class="checkbox">
+                        <div class="circle">
+                        </div> <!-- ./circle -->
+                    </div> <!-- ./checkbox -->
+                    <div class="input-field">
+                        <input type="text" class="addNewTask" placeholder="Create new to do">
+                    </div> <!-- ./input-filed -->
+                </div> <!-- ./input -->
+                <div class="tasks">
+                    <div class="task flex-row">
+                        <div class="checkbox">
+                            <div class="circle">
                                 <i class="fa fa-check" aria-hidden="true"></i>
-                            </div>
-                        </div>
+                            </div> <!-- ./circle -->
+                        </div> <!-- ./checkbox -->
                         <div class="task-content">
-                            <p>task1</p>
-                            <div class="close">
-                                <i class="fa fa-times" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="status-mob">
-                    <div class="status-counter">
-                        <span id="tasksRemaining">0</span>
+                            <p>task</p>
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </div> <!-- ./task-content -->
+                    </div> <!-- ./task -->
+                </div> <!-- ./tasks -->
+                <div class="filter-menu-mob">
+                    <div class="filter-counter">
+                        <span class="counter">0</span>
                         items left
-                    </div>
+                    </div> <!-- ./filter-counter -->
                     <div class="clear-all">
                         <a href="#" class="btn-clear-all">Clear Completed</a>
-                    </div>
-                </div>
-                <div class="status">
-                    <div class="status-counter">
-                        <span id="counter">0</span>
+                    </div> <!-- ./clear-all -->
+                </div> <!-- ./filter-menu-mobile -->
+                <div class="filter-menu">
+                    <div class="filter-counter">
+                        <span class="counter">0</span>
                         items left
-                    </div>
-                    <div class="status-category">
+                    </div> <!-- ./filter-counter -->
+                    <div class="filter-category">
                         <ul>
-                            <li><a href="#" class="active">All</a></li>
+                            <li><a href="#">All</a></li>
                             <li><a href="#">Active</a></li>
                             <li><a href="#">Completed</a></li>
-                        </ul>
-                    </div>
+                        </ul> <!-- ./ul -->
+                    </div> <!-- ./filter-category -->
                     <div class="clear-all">
                         <a href="#" class="btn-clear-all">Clear Completed</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </div> <!-- ./clear-all -->
+                </div> <!-- ./filter-menu -->
+            </div> <!-- ./container -->
+        </main> <!-- ./main -->
         <footer>
             <p>Drag and Drop to reorder list</p>
-        </footer>
-    </div>
+        </footer> <!-- ./footer -->
+    </div> <!-- ./container -->
 </body>
 </html>
