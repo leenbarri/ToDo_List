@@ -8,7 +8,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Glory&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -26,7 +26,7 @@
             <div id="main-container">
                 <div class="title">
                     <h2>todo</h2>
-                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-sun changeTheme"></i>
                 </div> <!-- ./title -->
                 <div class="input flex-row">
                     <div class="checkbox">
@@ -34,21 +34,21 @@
                         </div> <!-- ./circle -->
                     </div> <!-- ./checkbox -->
                     <div class="input-field">
-                        <input type="text" class="addNewTask" placeholder="Create new to do">
+                        <input type="text" class="addNewTask" placeholder="Create a new todo..">
                     </div> <!-- ./input-filed -->
                 </div> <!-- ./input -->
                 <div class="tasks">
-                    <div class="task flex-row">
-                        <div class="checkbox">
-                            <div class="circle">
-                                <i class="fa fa-check" aria-hidden="true"></i>
-                            </div> <!-- ./circle -->
-                        </div> <!-- ./checkbox -->
-                        <div class="task-content">
-                            <p>task</p>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </div> <!-- ./task-content -->
-                    </div> <!-- ./task -->
+					<div class="task flex-row">
+						<div class="checkbox">
+							<div class="circle">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</div> <!-- ./circle -->
+						</div> <!-- ./checkbox -->
+						<div class="task-content">
+							<p>task</p>
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</div> <!-- ./task-content -->
+					</div> <!-- ./task -->
                 </div> <!-- ./tasks -->
                 <div class="filter-menu-mob">
                     <div class="filter-counter">
@@ -66,9 +66,9 @@
                     </div> <!-- ./filter-counter -->
                     <div class="filter-category">
                         <ul>
-                            <li><a href="#">All</a></li>
-                            <li><a href="#">Active</a></li>
-                            <li><a href="#">Completed</a></li>
+                            <li><a href="#" class="showAll">All</a></li>
+                            <li><a href="#" class="showActive">Active</a></li>
+                            <li><a href="#" class="showCompleted">Completed</a></li>
                         </ul> <!-- ./ul -->
                     </div> <!-- ./filter-category -->
                     <div class="clear-all">
@@ -81,5 +81,6 @@
             <p>Drag and Drop to reorder list</p>
         </footer> <!-- ./footer -->
     </div> <!-- ./container -->
+    <script src="js/script.js"></script>
 </body>
 </html>

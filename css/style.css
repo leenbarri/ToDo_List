@@ -5,18 +5,36 @@
     box-sizing: border-box;
 }
 :root {
+    --bg-img : url('../imgs/bg.jpg');
     --main-color : hsl(235, 21%, 11%);
     --s-main-color : hsl(235, 24%, 19%);
+    --bx-sh : var(--main-color);
+    --bx-sh-br : var(--s-main-color);
+    --scrollbar-track : var(--main-color);
+    --scrollbar-thumb : var(--s-main-color);
     --border-color : hsl(237, 14%, 26%);
-    --text-color : hsl(234, 39%, 85%);
+    --text-color : hsl(225, 2%, 67%);
     --placholder-color : hsl(233, 14%, 35%);
     --white-color : #FFF;
-    --blue-color : hsl(225deg 100% 60%);
+    --hover-color : hsl(220, 98%, 61%);
     --lin-gr : linear-gradient(180deg, hsl(250deg 75% 35%), hsl(294deg 63% 30%));
+}
+.light-theme {
+    --bg-img : url('../imgs/bg-light.jpg');
+    --white-color : hsl(0, 0%, 98%);
+    --main-color : var(--white-color);
+    --scrollbar-track : hsl(237, 39%, 91%);
+    --scrollbar-thumb : hsl(240, 2%, 38%);
+    --s-main-color : var(--white-color);
+    --text-color : #1A1A1A;
+    --border-color : var(--text-color);
+    --placholder-color : hsl(233, 14%, 35%);
+    --hover-color : hsl(220, 98%, 61%);
+    --lin-gr : linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 body {
     background-color: var(--main-color);
-    font-family: 'Glory', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .flex-row {
     display: flex;
@@ -28,16 +46,23 @@ a {
     text-decoration: none;
     color: var(--text-color);
 }
+.completed p {
+    text-decoration: line-through;
+    opacity: var(--opactiy-color);
+}
+.active-btn {
+    color: var(--hover-color);
+}
 /* End Globals */
 /* Start Scrollbar Style */
 ::-webkit-scrollbar {
     width: 10px; 
 }
 ::-webkit-scrollbar-track {
-    background-color: var(--main-color);
+    background-color: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--s-main-color);
+    background: var(--scrollbar-thumb);
     border-radius: 25px;
 }
 /* End Scrollbar Style */
@@ -56,7 +81,7 @@ a {
 /* Start Header Styling */
 header {
     grid-area: header;
-    background: url('../imgs/bg.jpg') no-repeat;
+    background: var(--bg-img) no-repeat;
     background-size: cover;
 }
 /* End Header Styling */
@@ -119,6 +144,7 @@ main {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: var(--white-color);
 }
 .circle {
     width: 35px;
@@ -128,6 +154,7 @@ main {
     justify-content: center;
     align-items: center;
     border: 1px solid var(--border-color);
+    transition: all 0.25s;
 }
 .circle i {
     display: none;
@@ -155,7 +182,7 @@ main {
     font-size: 17px;
 }
 .input .input-field input::placeholder {
-    color: var(--text-color);
+    color: var(--placholder-color);
 }
 /* End Input Styling */
 /* Start Task Styling */
@@ -165,18 +192,28 @@ main {
     padding: 5px 0;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.4);
 }
 .task {
     background-color: var(--s-main-color);
     color: var(--text-color);
     border-bottom: 1px solid var(--border-color);
     height: 60px;
+    transition: all .25s ease;
+    transition-property: box-shadow, transform, border-color;
+}
+.task:hover {
+    cursor: move;
+    transform: translateY(-2px);
+    box-shadow: 0 0px 7px 0px var(--bx-sh);
+    border-color: var(--bx-sh-br);
 }
 .task .task-content {
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 15px;
 }
 .task .task-content i {
     display: none;
@@ -184,6 +221,13 @@ main {
     cursor: pointer;
 }
 .task .task-content:hover i {
+    display: block;
+}
+.task.completed .circle {
+    border: 1px solid var(--lin-gr);
+    background: var(--lin-gr);
+}
+.task.completed .circle i {
     display: block;
 }
 @media(max-width: 700px) {
@@ -203,6 +247,14 @@ main {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
+
+.btn-clear-all {
+    padding: 5px 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-color);
+}
 ul {
     list-style: none;
     display: flex;
@@ -210,8 +262,9 @@ ul {
 ul li {
     margin-right: 10px;
 }
-.filter-menu a:hover {
-    color: var(--blue-color);
+.btn-clear-all:hover,
+.filter-category a:hover {
+    color: var(--hover-color);
 }
 .filter-menu-mob {
     display: none;
@@ -229,7 +282,7 @@ ul li {
         border-bottom-left-radius: 5px;
     }
     .filter-menu-mob a:hover {
-        color: var(--blue-color);
+        color: var(--hover-color);
     }
     .filter-menu .filter-counter,
     .filter-menu .clear-all {
@@ -254,5 +307,6 @@ footer {
 footer p {
     position: absolute;
     top: -150px;
+    opacity: var(--opactiy-color);
 }
 /* End Footer Styling */
